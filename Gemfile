@@ -49,10 +49,12 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-gropu :test do
+group :test do
   gem 'factory_girl_rails'
   gem 'rspec-expectations'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
   gem 'cucumber-api-steps'
   gem 'rspec-rails', '~> 3.4'
 end
@@ -64,3 +66,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 # env variables
 gem 'figaro'
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'simple_token_authentication', '~> 1.0'
