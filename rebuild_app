@@ -1,0 +1,5 @@
+docker stop notesapp_app_1
+
+docker rm notesapp_app_1
+
+sh ./up
