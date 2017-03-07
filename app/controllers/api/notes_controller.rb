@@ -5,6 +5,10 @@ module Api
 
     def index
       @notes = current_user.notes
+      respond_to do |format|
+        format.html
+        format.json { render json: @notes }
+      end
     end
 
     def show
