@@ -1,11 +1,11 @@
 # README
 
-# simple notes json api
+## Simple Notes App JSON API
 
 Headers:
 'Content-Type: application/json'
 
-## Create user
+### Create user
 
 POST /api/users.json
 ```
@@ -20,7 +20,7 @@ response:
 }
 ```
 
-## User login (get authentication_token)
+### User login (get authentication_token)
 
 POST /api/sessions.json
 ```
@@ -36,17 +36,15 @@ response:
 ```
 
 Headers:
-'Content-Type: application/json'
-'X-User-Email: example@email.com'
-'X-User-Token: wyECVCp9PeJXTkdynvVT'
+'Content-Type: application/json', 'X-User-Email: example@email.com', 'X-User-Token: wyECVCp9PeJXTkdynvVT'
 
-## Create a Note
+### Create a Note
 
 POST /api/notes.json
 ```
 { "note": { "title": "bu", "content": "bla bla" } }
 ```
 
-## Get user notes
+### Get user notes
 
 GET /api/notes.json
