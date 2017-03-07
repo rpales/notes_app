@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :notes
+  root to: "notes#index"
+
   devise_for :users
 
-  root to: "notes#index"
+  namespace :api do
+    resources :notes
+  end
 end
