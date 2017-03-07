@@ -1,0 +1,16 @@
+#!/bin/bash
+
+docker-compose build
+echo "Building: docker-compose build..."
+
+docker-compose up -d
+echo "Launching services: docker-compose up..."
+
+sleep 10
+
+if docker-compose run --rm app rake db:migrate ; then
+  echo "Notes App should be available at 139.59.170.157:3000!"
+else
+  echo " "
+  echo "Something went wrong, make sure db and app containers are up and running and run again db:migrate"
+fi
