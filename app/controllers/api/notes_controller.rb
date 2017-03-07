@@ -1,5 +1,5 @@
 module Api
-  class NotesController < ApplicationController
+  class NotesController < AuthenticatedController
     before_action :set_note, only: [:show, :update, :destroy]
 
     def index
