@@ -1,24 +1,17 @@
 module Api
   class NotesController < ApplicationController
-    before_action :set_note, only: [:show, :edit, :update, :destroy]
-    before_filter :authenticate_user!
+    before_action :set_note, only: [:show, :update, :destroy]
 
     def index
-      @notes = current_user.notes
       respond_to do |format|
-        format.html
-        format.json { render json: @notes }
+        format.json { render json: current_user.notes }
       end
     end
 
     def show
-    end
-
-    def new
-      @note = Note.new
-    end
-
-    def edit
+      respond_to do |format|
+        format.json { render json: @note }
+      end
     end
 
     def create
@@ -26,10 +19,8 @@ module Api
 
       respond_to do |format|
         if @note.save
-          format.html { redirect_to @note, notice: 'Note was successfully created.' }
           format.json { render :show, status: :created, location: @note }
         else
-          format.html { render :new }
           format.json { render json: @note.errors, status: :unprocessable_entity }
         end
       end
@@ -38,10 +29,8 @@ module Api
     def update
       respond_to do |format|
         if @note.update(note_params)
-          format.html { redirect_to @note, notice: 'Note was successfully updated.' }
-          format.json { render :show, status: :ok, location: @note }
+          format.json { render @note, status: :ok, location: @note }
         else
-          format.html { render :edit }
           format.json { render json: @note.errors, status: :unprocessable_entity }
         end
       end
@@ -49,8 +38,8 @@ module Api
 
     def destroy
       @note.destroy
+
       respond_to do |format|
-        format.html { redirect_to notes_url, notice: 'Note was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
