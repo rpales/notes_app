@@ -43,6 +43,14 @@ class NotesController < AuthenticatedController
     end
   end
 
+  def download
+    url = NotesUploader.create(current_user.id).url(1.day.from_now)
+
+    respond_to do |format|
+      format.json { render json: { 'link' => url } }
+    end
+  end
+
   private
     def set_note
       @note = current_user.notes.find(params[:id])
