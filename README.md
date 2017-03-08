@@ -2,9 +2,6 @@
 
 ## Simple Notes App JSON API
 
-Headers:
-'Content-Type: application/json'
-
 ### Create user
 
 POST /users.json
@@ -35,6 +32,7 @@ response:
 }
 ```
 
+The following request require user authentication
 Headers:
 'Content-Type: application/json', 'X-User-Email: example@email.com', 'X-User-Token: wyECVCp9PeJXTkdynvVT'
 
