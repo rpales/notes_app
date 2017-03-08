@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'api/registrations' }
 
   namespace :api do
-    resources :notes
+    resources :notes, only: [:create, :index, :update, :show, :destroy]
     resources :sessions, only: [:create]
   end
 end

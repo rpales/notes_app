@@ -19,7 +19,7 @@ module Api
 
       respond_to do |format|
         if @note.save
-          format.json { render :show, status: :created, location: @note }
+          format.json { render json: @note, status: :created }
         else
           format.json { render json: @note.errors, status: :unprocessable_entity }
         end
@@ -29,7 +29,7 @@ module Api
     def update
       respond_to do |format|
         if @note.update(note_params)
-          format.json { render @note, status: :ok, location: @note }
+          format.json { render json: @note, status: :ok }
         else
           format.json { render json: @note.errors, status: :unprocessable_entity }
         end
