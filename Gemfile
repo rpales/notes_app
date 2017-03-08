@@ -76,3 +76,6 @@ gem 'devise'
 gem 'figaro'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'simple_token_authentication', '~> 1.0'
+
+# s3 connections
+gem 'fog'
