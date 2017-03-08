@@ -19,8 +19,8 @@ class NotesUploader
   end
 
   def self.csv_file user_id
-    user = User.find(device_id)
-    return if device.nil?
+    user = User.find(user_id)
+    return if user.nil?
 
     csv_temp = Tempfile.new("temp_#{user_id}")
 

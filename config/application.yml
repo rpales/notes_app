@@ -1,3 +1,9 @@
+default:
+  AWS_ACCESS_KEY: AKIAIYPPFGYWYBWPTGNQ
+  AWS_SECRET_KEY: 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
+  AWS_REGION: eu-west-1
+  S3_BUCKET: testnotesapplication
+
 development:
   DB_PASSWORD: pass
   DB_DATABASE: notes_app_dev
