@@ -5,7 +5,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: pass
-      MYSQL_DATABASE: notes_app_dev
+      MYSQL_DATABASE1: notes_app_dev
+      MYSQL_DATABASE2: notes_app_test
       MYSQL_USER: notes_app_admin
       MYSQL_PASSWORD: pass
     ports:
