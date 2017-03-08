@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActionController::ParameterMissing do
     respond_to do |format|
       format.json do
-        render json: { error:  'parameters missing' }, status: :bad_request
+        render json: { error:  'parameters missing' }, status: 422
       end
     end
   end

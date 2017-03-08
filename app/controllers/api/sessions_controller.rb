@@ -9,7 +9,7 @@ module Api
       respond_to do |format|
         format.json do
           if user && user.valid_password?(session_params[:password])
-            render json: user
+            render json: user, status: 201
           else
             render json: { error: 'invalid username/password combination' }
           end

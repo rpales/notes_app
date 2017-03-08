@@ -7,7 +7,7 @@ Headers:
 
 ### Create user
 
-POST /api/users.json
+POST /users.json
 ```
 { "user": { "email": "example@email.com", "password": "example" } }
 ```
