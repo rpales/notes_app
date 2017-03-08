@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "notes#index"
+  root to: "web#index"
 
   devise_for :users, controllers: { registrations: 'registrations' }
 
