@@ -13,7 +13,7 @@
       <div class="row">
         <div class=".col-sm-6">
           <h4>Create User</h4>
-          <pre><code>curl -X POST -H "Content-type: application/json" -H "Accept: application/json" -d '{ "user": { "email": "example@email.com", "password": "example" } }' http://web.heroku.com/users.json</code></pre>
+          <pre><code>curl -X POST -H "Content-type: application/json" -H "Accept: application/json" -d '{ "user": { "email": "example@email.com", "password": "example" } }' http://notes-app-api.herokuapp.com/users.json</code></pre>
           <p>JSON response:</p>
           <pre><code>{ "id": 6, "email": "example@email.com", "authentication_token": "wyECVCp9PeJXTkdynvVT" }
           </code></pre>
@@ -23,7 +23,7 @@
       <div class="row">
         <div class=".col-sm-6">
           <h4>User Login (get authentication_token)</h4>
-          <pre><code>curl -X POST -H "Content-type: application/json" -H "Accept: application/json" -d '{ "session": { "email": "example@email.com", "password": "example" } }' http://web.heroku.com/sessions.json</code></pre>
+          <pre><code>curl -X POST -H "Content-type: application/json" -H "Accept: application/json" -d '{ "session": { "email": "example@email.com", "password": "example" } }' http://notes-app-api.herokuapp.com/sessions.json</code></pre>
           <p>JSON response:</p>
           <pre><code>{ "id": 6, "email": "example@email.com", "authentication_token": "wyECVCp9PeJXTkdynvVT" }
           </code></pre>
@@ -33,7 +33,7 @@
       <div class="row">
         <div class=".col-sm-6">
           <h4>Create Note</h4>
-          <pre><code>curl -X POST -H "Content-type: application/json" -H "Accept: application/json" -H "X-User-Email: example@email.com" -H "X-User-Token: wyECVCp9PeJXTkdynvVT" -d '{ "note": { "title": "bu", "content": "bla bla" } }' http://web.heroku.com/notes.json</code></pre>
+          <pre><code>curl -X POST -H "Content-type: application/json" -H "Accept: application/json" -H "X-User-Email: example@email.com" -H "X-User-Token: wyECVCp9PeJXTkdynvVT" -d '{ "note": { "title": "bu", "content": "bla bla" } }' http://notes-app-api.herokuapp.com/notes.json</code></pre>
           <p>JSON response:</p>
           <pre><code>{ "note": { "title": "bu", "content": "bla bla" } }
           </code></pre>
@@ -43,7 +43,7 @@
       <div class="row">
         <div class=".col-sm-6">
           <h4>Get Notes</h4>
-          <pre><code>curl -X GET -H "Content-type: application/json" -H "Accept: application/json" -H "X-User-Email: example@email.com" -H "X-User-Token: wyECVCp9PeJXTkdynvVT" http://web.heroku.com/notes.json</code></pre>
+          <pre><code>curl -X GET -H "Content-type: application/json" -H "Accept: application/json" -H "X-User-Email: example@email.com" -H "X-User-Token: wyECVCp9PeJXTkdynvVT" http://notes-app-api.herokuapp.com/notes.json</code></pre>
           <p>JSON response:</p>
           <pre><code>'[ { "note": { "title": "bu", "content": "bla bla" } }, { "note": { "title": "bu", "content": "bla bla" } } ]'
           </code></pre>
