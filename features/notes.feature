@@ -12,7 +12,7 @@ Feature: notes
     And that I am logged in as a user
     And I send a request to create a note
     And I send a request to create a note
-    When I send a GET request to "/api/notes"
+    When I send a GET request to "/notes"
     Then the response status should be "200"
     And the JSON response should have "$..content" with a length of 2
     And the JSON response should have "$..title" with a length of 2

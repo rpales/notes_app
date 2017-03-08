@@ -22,7 +22,7 @@ response:
 
 ### User login (get authentication_token)
 
-POST /api/sessions.json
+POST /sessions.json
 ```
 { "session": { "email": "example@email.com", "password": "example" } }
 ```
@@ -40,11 +40,11 @@ Headers:
 
 ### Create a Note
 
-POST /api/notes.json
+POST /notes.json
 ```
 { "note": { "title": "bu", "content": "bla bla" } }
 ```
 
 ### Get user notes
 
-GET /api/notes.json
+GET /notes.json

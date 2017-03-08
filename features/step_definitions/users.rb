@@ -34,7 +34,7 @@ end
 When(/^I send a request to create a session$/) do
   @user_email ||= 'example@example.com'
   steps %(
-    When I send a POST request to "api/sessions" with the following:
+    When I send a POST request to "sessions" with the following:
       """
       {
         "session": {
@@ -49,7 +49,7 @@ end
 When(/^I send a request to create a session with missing parameters$/) do
   @user_email ||= 'example@example.com'
   steps %(
-    When I send a POST request to "api/sessions" with the following:
+    When I send a POST request to "sessions" with the following:
       """
       {
         "session": {
