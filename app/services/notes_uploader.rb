@@ -4,7 +4,7 @@ class NotesUploader
   def self.create user_id
     csv = self.csv_file(user_id)
 
-    file = self.s3_connection.directories.new(:key => ENV['s3_bucket']).files.new({
+    file = self.s3_connection.directories.new(:key => ENV['S3_BUCKET']).files.new({
       :key    => "notes/#{user_id}/notes.csv",
       :body   => csv.open,
       :public => false,
@@ -37,9 +37,9 @@ class NotesUploader
   def self.s3_connection
     Fog::Storage.new({
       :provider                 => 'AWS',
-      :aws_access_key_id        => ENV['aws_access_key'],
-      :aws_secret_access_key    => ENV['aws_secret_key'],
-      :region                   => ENV['aws_region'],
+      :aws_access_key_id        => ENV['AWS_ACCESS_KEY'],
+      :aws_secret_access_key    => ENV['AWS_SECRET_KEY'],
+      :region                   => ENV['AWS_REGION'],
     })
   end
 end
